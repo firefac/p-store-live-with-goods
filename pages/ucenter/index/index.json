@@ -1,0 +1,10 @@
+{
+  "backgroundColor": "#F5F5F5",
+  "navigationBarTitleText": "个人中心",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "van-cell": "../../lib/cell/index",
+    "van-cell-group": "../../lib/cell-group/index",
+    "van-icon": "../../lib/icon/index"
+  }
+}

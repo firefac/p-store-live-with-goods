@@ -1,0 +1,82 @@
+<view class="container">
+  <van-tabs active="{{ active }}" bind:change="onChange">
+    <van-tab title="普通">
+      <view class="no-order" wx:if="{{!loading || orderList.length <= 0}}">
+        <view class="c">
+          <image src="http://nos.netease.com/mailpub/hxm/yanxuan-wap/p/20150730/style/img/icon-normal/noCart-a8fe3f12e5.png" />
+          <text>还没有任何订单呢</text>
+        </view>
+      </view>
+
+      <view class="orders">
+        <navigator url="../orderDetail/orderDetail?id={{item.id}}" class="order" wx:for="{{orderList}}" wx:key="id">
+          <view class="h">
+            <view class="l">订单编号：{{item.orderSn}}</view>
+            <view class="r">{{item.orderStatusText}}</view>
+          </view>
+          <view class="goods" wx:for="{{item.goodsList}}" wx:key="id" wx:for-item="gitem">
+            <view class="img">
+              <image src="{{gitem.picUrl}}" mode="aspectFill"></image>
+            </view>
+            <view class="info">
+              <text class="name">{{gitem.goodsName}}</text>
+              <text class="number">共{{gitem.number}}件商品</text>
+            </view>
+            <view class="status"></view>
+          </view>
+          <view class="b">
+            <view class="l">实付：￥{{item.actualPrice}}</view>
+          </view>
+        </navigator>
+      </view>
+    </van-tab>
+    <van-tab title="拼团">
+      <view class="no-order" wx:if="{{grouponOrderList.length == 0}}">
+        <view class="c">
+          <image src="http://nos.netease.com/mailpub/hxm/yanxuan-wap/p/20150730/style/img/icon-normal/noCart-a8fe3f12e5.png" />
+          <text>还没有任何订单呢</text>
+        </view>
+      </view>
+
+      <view class="groupon-order">
+        <view class="groupon" wx:for="{{grouponOrderList}}" wx:key="id">
+          <view class="h">
+            <view class="l">
+              <view class="{{item.orderPromotionStatus != 1001 || (item.joinedMembers == 0 || item.totalMembers == item.joinedMembers) ? 'group-num' :'group-num-short'}}">{{item.totalMembers}}人团</view>
+              <view class="short-of" wx:if="{{item.orderPromotionStatus == 1001 && (item.joinedMembers != 0 && item.totalMembers != item.joinedMembers)}}">还差{{item.totalMembers - item.joinedMembers}}人</view>
+            </view>
+            <view class="r">{{item.orderStatusText}}</view>
+          </view>
+          <navigator url="../orderDetail/orderDetail?id={{item.id}}"class="goods">
+            <view class="goods" wx:for="{{item.goodsList}}" wx:key="id" wx:for-item="gitem">
+              <view class="img">
+                <image src="{{gitem.picUrl}}" mode="aspectFill"></image>
+              </view>
+              <view class="info">
+                <text class="name">{{gitem.goodsName}}</text>
+                <text class="desc">{{gitem.goodsName}}</text>
+                <view class="price">
+                  <view class="retailPrice">￥{{gitem.price}}</view>
+                  <view class="counterPrice">￥{{gitem.counterPrice}}</view>
+                </view>
+              </view>
+              <view class="status"></view>
+            </view>
+          </navigator>
+          <view class="b">
+            <view class="l" wx:if="{{item.remainedTime != null}}">
+              <view>成团剩余时间：</view>
+              <view style="padding-top:30rpx;">
+                <van-count-down time="{{item.remainedTime}}"/>
+              </view>
+            </view>
+            <view class="r">
+              <van-button wx:if="{{item.orderPromotionStatus == 1001 && item.orderStatus != 101}}" icon="share" round size="small" color="#996600" data-order-id="{{item.id}}" bind:click="shareGroupon">邀请好友</van-button>
+              <van-button wx:if="{{item.orderPromotionStatus != 1001}}" plain round size="small" color="#996600" data-order="{{item}}" bind:click="reBuy">重新购买</van-button>
+            </view>
+          </view>
+        </view>
+      </view>
+    </van-tab>
+  </van-tabs>
+</view>

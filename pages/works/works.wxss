@@ -1,0 +1,107 @@
+page{
+  background-color: #fff;
+}
+
+.container {
+  box-sizing: border-box;
+  background-color: #fff;
+  font-family: PingFangSC-Light, helvetica, 'Heiti SC';
+}
+
+.describe-content{
+  padding: 10rpx 30rpx 50rpx 30rpx;
+}
+
+.wxParse-p{
+    margin: 10rpx 0rpx;
+}
+
+.content image {
+  display: inline-block;
+  width: 100%;
+  margin: 10rpx 0rpx;
+}
+
+.title{
+  margin-top: 50rpx;
+  font-weight: bold;
+  font-size: 40rpx;
+}
+
+.sub-title {
+  padding: 20rpx 0rpx 10rpx 0rpx;
+}
+
+.sub-title text{
+  font-size: 32rpx;
+  color: #7d7e80;
+}
+
+.tags{ 
+  margin: 10rpx 0rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tags .tag{
+  margin: 0 20rpx 10rpx 0;
+}
+
+.operation {
+  padding: 10rpx 0rpx;
+  display:flex;
+}
+.operation .likes {
+  width: 75%;
+  display: flex;
+}
+
+.operation .likes .avatar {
+  height: 50rpx;
+  width: 50rpx;
+  border: 1rpx solid rgba(255, 255, 255, 1);
+  border-radius: 50%;
+}
+
+.operation .likes .avatar:nth-of-type(n+2) {
+  margin-left: -15rpx;
+}
+
+.operation .likes .txt {
+  font-size: 26rpx;
+  color: #000;
+  line-height: 60rpx;
+  margin: 0rpx 10rpx;
+}
+
+.operation .btn {
+  display:flex;
+  text-align: center;
+  width: 25%;
+}
+
+.operation .share-btn {
+  margin-left: 30rpx;
+  background-color:transparent;
+}
+
+.short-content{
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #000;
+}
+
+.contact {
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 100%;
+  position: fixed;
+  bottom: 50rpx;
+  right: 10rpx;
+  font-size: 20rpx;
+  box-sizing: border-box;
+  background: url("https://firefac-1259431066.picsh.myqcloud.com/zv6kq2ms0e811z0q5zcc8p1pf7fz67mc.png") no-repeat center 21rpx;
+  background-size: 55rpx auto;
+}
+
+@import '../../lib/wxParse/wxParse.wxss'

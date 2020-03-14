@@ -1,0 +1,12 @@
+<scroll-view class="container" style="height: 100%;">
+  <view class="topic-list">
+    <navigator class="item" wx:for="{{topicList}}" wx:key="id" url="../topicDetail/topicDetail?id={{item.id}}">
+      <image class="img" src="{{item.picUrl}}"></image>
+      <view class="info">
+        <text class="title">{{item.title}}</text>
+        <text class="desc">{{item.subtitle}}</text>
+        <text class="price">{{item.price}}元起</text>
+      </view>
+    </navigator>
+  </view>
+</scroll-view>

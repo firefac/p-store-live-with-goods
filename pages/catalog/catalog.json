@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "分类",
+  "usingComponents": {
+    "van-sticky": "../../lib/sticky/index"
+  }
+}

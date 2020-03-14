@@ -1,0 +1,14 @@
+<view class="container">
+
+  <view class="common-problem">
+    <view class="item" wx:for="{{issueList}}" wx:key="id">
+      <view class="question-box">
+        <text class="spot"></text>
+        <text class="question">{{item.question}}</text>
+      </view>
+      <view class="answer">
+        {{item.answer}}
+      </view>
+    </view>
+  </view>
+</view>

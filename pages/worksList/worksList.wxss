@@ -1,0 +1,54 @@
+page{
+  background-color: #fff;
+}
+
+.container {
+  box-sizing: border-box;
+  background-color: #fff;
+  font-family: PingFangSC-Light, helvetica, 'Heiti SC';
+}
+
+.img-collects {
+  height: 50rpx;
+  width: 120rpx;
+  padding: 5rpx;
+  background-color: rgba(0,0,0,0.5);
+  font-size: 20rpx;
+  box-sizing: border-box;
+  background-size: 55rpx auto;
+  position: absolute;
+  right: 10rpx;
+  bottom: 20rpx;
+  border-radius: 10px;
+}
+
+.noContent{
+  display: block;
+  line-height: 80rpx;
+  text-align: center;
+  margin-top: 100rpx;
+  font-size: 30rpx;
+  color: #666;
+}
+
+.works-card .operation .likes .txt {
+  font-size: 26rpx;
+  color: #000;
+  line-height: 60rpx;
+  margin: 0rpx 10rpx;
+}
+
+.works-card .content .title {
+  font-size: 32rpx;
+  font-weight: bold;
+  padding: 5rpx 30rpx 5rpx 30rpx;
+  display: block;
+  color: #000;
+}
+
+.works-card .content .desc {
+  font-size: 26rpx;
+  color:#666;
+  padding: 0rpx 30rpx;
+  display: block;
+}

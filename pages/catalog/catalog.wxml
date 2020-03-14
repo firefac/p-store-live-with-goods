@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<!--1px = 750/320 = 2.34rpx;-->
+<view class="container">
+    <view class="type-container">
+        <scroll-view class="type-navbar" scroll-x="true">
+            <view class="type-box" wx:for-items="{{categories}}" wx:key="id">
+                <view id="{{item.id}}" class="type-navbar-item {{activeCategoryId == item.id ? 'type-item-on' : ''}}" bindtap="tabClick">
+                    {{item.name}}
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="goods-container">
+        <navigator url="../goods/goods?id={{item.id}}" class="goods-box" wx:for-items="{{goods}}" wx:key="index">
+           <view class="img-box">
+              <image src="{{item.picUrl}}" class="image" mode="aspectFill" lazy-load="true"/>
+           </view>
+           <view class="goods-title">{{item.name}}</view>
+           <view class="goods-desc">{{item.brief}}</view>
+           <view class="goods-price">¥ {{item.retailPrice}}</view>
+        </navigator>
+    </view>
+    <view hidden="{{loadingMoreHidden ? true : false}}" class="no-more-goods">没有更多啦</view>
+</view>

@@ -1,0 +1,58 @@
+<wxs module="dateUtil" src="../../utils/timeUtil.wxs"></wxs>
+
+<view class="container">
+  <view class="noContent" wx:if="{{noContent}}">
+    <van-icon name="bullhorn-o" size="120rpx"/>
+    <view>作者很懒，还没留下什么创作呢～～</view>
+  </view>
+  <view class="works-card" wx:for="{{worksList}}" wx:for-item="works" wx:key="worksId">
+    <view class="content">
+      <block wx:if="{{works.type == 1}}">
+        <image class="cover" wx:if="{{works.imageList.length == 1}}" src="{{works.imageList[0]}}" mode="widthFix" data-from="{{works.imageList}}" data-src="{{picItem}}" bindtap="imgTap"></image>
+        <van-grid wx:else column-num="{{works.imageList.length > 4 ? 3 : 2}}" gutter="{{ 10 }}rpx" border="{{ false }}">
+          <van-grid-item use-slot wx:for="{{ works.imageList }}" wx:for-item="picItem" wx:key="id">
+            <image style="width: 100%; height: {{works.imageList.length > 4 ? 240 : 365}}rpx;" src="{{picItem}}" mode="aspectFill" data-from="{{works.imageList}}" data-src="{{picItem}}" bindtap="imgTap"></image>
+          </van-grid-item>
+        </van-grid>
+      </block>
+      <view style="position: relative;" wx:if="{{works.type == 2}}">
+        <image class="cover" src="{{works.imageList[0]}}" mode="widthFix" data-from="{{works.imageList}}" data-src="{{picItem}}" bindtap="imgTap"></image>
+        <view class="img-collects">
+          <view style="color:#fff; font-size:29rpx;text-align:center"><van-icon name="photo" color="#fff" style="margin-right:5rpx;" />{{works.imageList.length}}图</view>
+        </view>
+      </view>
+      <navigator url="../works/works?id={{works.id}}" wx:if="{{works.type == 3}}">
+        <image class="cover" src="{{works.coverUrl}}" mode="widthFix"></image>
+      </navigator>
+
+      <view class="operation">
+        <view class="likes">
+          <block wx:if="{{works.upVos.length > 0}}">
+            <view class="avatars">
+              <image class="avatar" wx:for="{{ works.upVos }}" wx:for-item="up" wx:key="id" src="{{up.avatar}}"></image>
+            </view>
+            <view class="txt">等{{works.upCt}}次赞</view>
+          </block>
+        </view>
+        <view class="btn">
+          <view class="share-btn">
+            <van-icon color="#CC3333" size="20px" name="like" wx:if="{{works.uped == 1}}" data-works="{{works}}" data-type="{{2}}" bindtap="upAction"/>
+            <van-icon size="20px" name="like-o" wx:elif="{{works.uped == 0}}" data-works="{{works}}" data-type="{{1}}" bindtap="upAction"/>
+          </view>
+          <button class="share-btn" data-works="{{works}}" open-type="share">
+            <van-icon size="20px" name="share" />
+          </button>
+        </view>
+      </view>
+      <view class="tags" wx:if="{{works.hashtags.length > 0}}">
+        <van-tag class="tag" size="medium" color="#003366"  wx:for="{{ works.hashtags }}" wx:for-item="hashtag" wx:key="id" data-hashtag="{{hashtag}}" bindtap="linkToHashtag">#{{hashtag.name}}</van-tag>
+      </view>
+
+      <navigator url="../works/works?id={{works.id}}">
+        <text class="title" wx:if="{{works.type == 3}}">{{works.title}}</text>
+        <text class="title" wx:else>{{works.content}}</text>
+        <text wx:if="{{works.content != null && works.type == 3}}" class="desc">{{works.content}}</text>
+      </navigator>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,90 @@
+<!--index.wxml-->
+<!--1px = 750/320 = 2.34rpx;-->
+<view class="container">
+    <view class="search">
+        <navigator url="/pages/catalog/catalog">
+            <van-icon  name="apps-o" size="45rpx" />
+        </navigator>
+        <navigator url="/pages/search/search" class="input">
+            <image class="icon"></image>
+            <text class="txt">搜索</text>
+        </navigator>
+    </view>
+    <swiper class="banner" indicator-dots="true" autoplay="true" interval="10000" duration="1000">
+        <swiper-item wx:for="{{banner}}" wx:key="id">
+            <image bindtap="tapBanner" data-ad="{{item}}" src="{{item.url}}" background-size="cover"></image>
+        </swiper-item>
+    </swiper>
+    <van-notice-bar
+        wx:if="{{announcements.length > 0}}"
+        mode="closeable"
+        scrollable="false"
+        left-icon="volume-o"
+        text="{{announcements[0].title}}"
+        data-link="/pages/goods/goods?id=1181140"
+        bindtap="jumpToMp"/>
+    <view class="a-section a-new" wx:if="goods.length > 0">
+        <navigator class="h" url="/pages/catalog/catalog">
+            <text class="txt">新品首发</text>
+            <text class="txt-r">查看更多 ></text>
+        </navigator>
+        <view class="b">
+        <scroll-view scroll-x class="list">
+           <view class="good-box" wx:for="{{newGoods}}" wx:for-index="index" wx:for-item="item" wx:key="id">
+            <view class="item {{index % 2 == 0 ? '' : 'item-b'}}">
+            <navigator url="../goods/goods?id={{item.id}}" class="a">
+                <image class="img" src="{{item.picUrl}}" background-size="cover"></image>
+                <text class="name">{{item.name}}</text>
+                <text class="desc">{{item.brief}}</text>
+                <text class="price">￥{{item.retailPrice}}</text>
+            </navigator>
+            </view>
+        </view>
+        </scroll-view>
+        </view>
+    </view>
+    
+    <view class="a-section good-grid">
+        <navigator class="h" url="/pages/catalog/catalog">
+            <text class="txt">人气推荐</text>
+            <text class="txt-r">查看更多 ></text>
+        </navigator>
+        <view class="b">
+            <block wx:for="{{hotGoodsWithAd}}" wx:for-index="index" wx:for-item="item" wx:key="id">
+                <view class="item good-item {{index % 2 == 0 ? '' : 'item-b'}}" wx:if="{{item.type == 1}}">
+                    <navigator url="../goods/goods?id={{item.id}}" class="a">
+                        <image class="img" src="{{item.picUrl}}" background-size="cover"></image>
+                        <text class="name">{{item.name}}</text>
+                        <text class="desc">{{item.brief}}</text>
+                        <text class="price">￥{{item.retailPrice}}</text>
+                    </navigator>
+                </view>
+                <view class="item {{index % 2 == 0 ? '' : 'item-b'}}" wx:if="{{item.type == 2}}">
+                    <image bindtap="tapHotGoodsAd" data-ad="{{item}}" class="ad-img" src="{{item.adUrl}}" mode="aspectFill"></image>
+                </view>
+            </block>
+        </view>
+    </view>
+
+    <view class="a-section good-grid">
+        <navigator class="h" url="/pages/catalog/catalog">
+            <text class="txt">全部商品</text>
+            <text class="txt-r">查看更多 ></text>
+        </navigator>
+        <view class="b">
+            <block wx:for="{{goods}}" wx:for-index="index" wx:for-item="item" wx:key="id">
+                <view class="item good-item {{index % 2 == 0 ? '' : 'item-b'}}">
+                <navigator url="../goods/goods?id={{item.id}}" class="a">
+                    <image class="img" src="{{item.picUrl}}" background-size="cover"></image>
+                    <text class="name">{{item.name}}</text>
+                    <text class="desc">{{item.brief}}</text>
+                    <text class="price">￥{{item.retailPrice}}</text>
+                </navigator>
+                </view>
+            </block>
+        </view>
+    </view>
+    <view class="contact" bindtap="openCartPage">
+        <van-icon name="shopping-cart" size="50rpx" color="#fff"/>
+    </view>
+</view>

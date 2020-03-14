@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "作品展示",
+  "usingComponents": {
+    "van-card": "../../lib/card/index",
+    "van-button": "../../lib/button/index",
+    "van-icon": "../../lib/icon/index",
+    "van-tag": "../../lib/tag/index",
+    "van-grid": "../../lib/grid/index",
+    "van-grid-item": "../../lib/grid-item/index"
+  }
+}

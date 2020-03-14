@@ -1,0 +1,137 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"uglifyFileName": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.4.0",
+	"appid": "wxc8d675b0d496a013",
+	"projectname": "live-with-goods",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 22,
+			"list": [
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "专题",
+					"pathName": "pages/topic/topic",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "专题详情",
+					"pathName": "pages/topicDetail/topicDetail",
+					"query": "id=314"
+				},
+				{
+					"id": -1,
+					"name": "订单列表",
+					"pathName": "pages/ucenter/order/order",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "团购专区",
+					"pathName": "pages/groupon/patchGroupon/patchGroupon",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "拼团邀请",
+					"pathName": "pages/groupon/patchGrouponShare/patchGrouponShare",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "拼团异常",
+					"pathName": "pages/groupon/patchGrouponException/patchGrouponException",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "选择优惠券",
+					"pathName": "pages/ucenter/couponSelect/couponSelect",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的优惠券列表",
+					"pathName": "pages/ucenter/couponList/couponList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "优惠券列表",
+					"pathName": "pages/coupon/coupon",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "帮助中心",
+					"pathName": "pages/help/help",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/goods/goods",
+					"pathName": "pages/goods/goods",
+					"query": "scene=id=1181000",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/goods/goods",
+					"pathName": "pages/goods/goods",
+					"query": "scene=id%3D1181000",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/goods/goods",
+					"pathName": "pages/goods/goods",
+					"query": "scene=id%3D1181000",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/groupon/patchGrouponShare/patchGrouponShare",
+					"pathName": "pages/groupon/patchGrouponShare/patchGrouponShare",
+					"scene": null
+				}
+			]
+		}
+	}
+}

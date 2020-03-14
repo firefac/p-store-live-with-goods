@@ -1,0 +1,25 @@
+<wxs module="dateUtil" src="../../utils/timeUtil.wxs"></wxs>
+
+<view class="container">
+  <view class="coupon-list" scroll-y="true">
+
+    <view class="item" wx:for="{{couponList}}" wx:for-index="index" wx:for-item="item" wx:key="id" bindtap="getCoupon" data-index="{{item.id}}">
+      <view class="tag">{{item.tag}}</view>
+      <view class="content">
+        <view class="left">
+          <view class="discount">{{item.discount}}元</view>
+          <view class="min"> 满{{item.min}}元使用</view>
+        </view>
+        <view class="right">
+          <view class="name">{{item.name}}</view>
+          <view class="time" wx:if="{{item.days != 0}}">有效期：{{item.days}}天</view>
+          <view class="time" wx:else> 有效期：{{dateUtil.dateFormat(item.startTime)}} - {{dateUtil.dateFormat(item.endTime)}}</view>
+        </view>
+      </view>
+      <view class="condition">
+        <text class="txt">{{item.desc}}</text>
+        <image src="{{item.pic}}" class="icon"></image>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "创作详情",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "van-button": "../../lib/button/index",
+    "van-icon": "../../lib/icon/index",
+    "van-tag": "../../lib/tag/index",
+    "van-grid": "../../lib/grid/index",
+    "van-grid-item": "../../lib/grid-item/index"
+  }
+}
