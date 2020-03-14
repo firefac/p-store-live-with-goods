@@ -21,7 +21,7 @@
           <view style="color:#fff; font-size:29rpx;text-align:center"><van-icon name="photo" color="#fff" style="margin-right:5rpx;" />{{works.imageList.length}}图</view>
         </view>
       </view>
-      <navigator url="../works/works?id={{works.id}}" wx:if="{{works.type == 3}}">
+      <navigator url="../works/works?id={{works.id}}" wx:if="{{works.type == 3 || works.type == 4}}">
         <image class="cover" src="{{works.coverUrl}}" mode="widthFix"></image>
       </navigator>
 
@@ -49,9 +49,9 @@
       </view>
 
       <navigator url="../works/works?id={{works.id}}">
-        <text class="title" wx:if="{{works.type == 3}}">{{works.title}}</text>
+        <text class="title" wx:if="{{works.type == 3 || works.type == 4}}">{{works.title}}</text>
         <text class="title" wx:else>{{works.content}}</text>
-        <text wx:if="{{works.content != null && works.type == 3}}" class="desc">{{works.content}}</text>
+        <text wx:if="{{works.content != null && works.type == 3 || works.type == 4}}" class="desc">{{works.content}}</text>
       </navigator>
     </view>
   </view>

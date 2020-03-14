@@ -1,6 +1,9 @@
 <wxs module="dateUtil" src="../../utils/timeUtil.wxs"></wxs>
 
-<view class="container">
+<view wx:if="{{works.type == 4}}" >
+  <web-view src="{{works.jumpInfo}}" />
+</view>
+<view class="container" wx:else>
   <view class="images" wx:if="{{works.type == 1 || works.type == 2}}">
     <block wx:for="{{ works.imageList }}" wx:for-item="picItem">
       <image style="width: 100%;" src="{{picItem}}" mode="widthFix" data-from="{{works.imageList}}" data-src="{{picItem}}" bindtap="imgTap"></image>
