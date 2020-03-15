@@ -52,7 +52,7 @@ Page({
       if(works.type == 1 || works.type == 2){
         title = works.content
         imageUrl = works.imageList[0]
-      }else if(works.type == 3){
+      }else if(works.type == 3 || works.type == 4){
         title = works.title
         imageUrl = works.coverUrl
       }
