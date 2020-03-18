@@ -1,4 +1,4 @@
-# 费尔工坊拼团小程序（费尔工坊小程序开放平台，永久免费）
+# 费尔工坊直播带货（费尔工坊小程序开放平台，永久免费）
 
 ### 开放平台介绍
 费尔工坊开放平台，为程序员、创业者、传统业者以及对电商小程序的兴趣爱好者，提供专业的电商社交等行业解决方案。帮助大家能快速搭建、并能自定义创建稳定可信赖的小程序系统。
@@ -18,7 +18,10 @@
 
 ### 联系我们
 #### 关注公众号，体验小程序，更多开源免费好玩的小程序持续更新中
-<img src="https://firefac-1259431066.picsh.myqcloud.com/1ef798vi5r0fpxu0d7vvhxjzzsf764j9.png" style="width: 200px; "/>
+<img src="https://firefac-1259431066.picsh.myqcloud.com/1lafcz0ntnrsl108i7qlutjevyre94ki.png" style="width: 200px; "/>
+<img src="https://firefac-1259431066.picsh.myqcloud.com/jr73gxct5gat51ypw5rsz93gsgcj1p1f.png" style="width: 200px; "/>
+<img src="https://firefac-1259431066.picsh.myqcloud.com/m1gky7cqte85o9qz7w0ytmxp9galhzcs.png" style="width: 200px; "/>
+<img src="https://firefac-1259431066.picsh.myqcloud.com/dp97g4qk8jt29tj3bbe5hawwqhd333a7.png" style="width: 200px; "/>
 
 #### 加入QQ群，参与讨论
 

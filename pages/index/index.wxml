@@ -20,9 +20,7 @@
         mode="closeable"
         scrollable="false"
         left-icon="volume-o"
-        text="{{announcements[0].title}}"
-        data-link="/pages/goods/goods?id=1181140"
-        bindtap="jumpToMp"/>
+        text="{{announcements[0].title}}"/>
     <view class="a-section a-new" wx:if="goods.length > 0">
         <navigator class="h" url="/pages/catalog/catalog">
             <text class="txt">新品首发</text>

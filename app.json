@@ -35,6 +35,7 @@
     "pages/about/about",
     "pages/coupon/coupon",
     "pages/livePlayer/livePlayer",
+    "pages/livePlayer2/livePlayer",
     "pages/works/works",
     "pages/worksList/worksList",
     "pages/worksList-tag/worksList",
@@ -61,7 +62,7 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/livePlayer/livePlayer",
+        "pagePath": "pages/livePlayer2/livePlayer",
         "iconPath": "static/images/live.png",
         "selectedIconPath": "static/images/live@selected.png",
         "text": "直播"
@@ -89,8 +90,7 @@
   "debug": true,
   "sitemapLocation": "sitemap.json",
   "navigateToMiniProgramAppIdList": [
-    "wx6885acbedba59c14",
-    "wx283419ee2df7ee01"
+    "wx6885acbedba59c14"
   ],
   "plugins": {
     "live-player-plugin": {

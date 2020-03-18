@@ -49,6 +49,7 @@
   width: 718.75rpx;
   height: 100%;
   margin-left: 30rpx;
+  margin-top: 15rpx;
 }
 
 .goods-info .c text {

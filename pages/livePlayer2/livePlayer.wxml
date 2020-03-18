@@ -1,0 +1,49 @@
+<wxs module="dateUtil" src="../../utils/timeUtil.wxs"></wxs>
+
+<view class="container">
+  <view class="noContent" wx:if="{{rooms.length == 0}}">
+    <van-icon name="bullhorn-o" size="120rpx" />
+    <view>没有更多直播啦～～</view>
+  </view>
+  <view class="live-container">
+    <view class="item" wx:for="{{rooms}}" wx:for-index="index" wx:for-item="item" wx:key="id">
+      <navigator url="plugin-private://wx2b03c6e691cd7370/pages/live-player-plugin?room_id={{item.roomid}}" class="img-container">
+        <image class="img" src="{{item.anchorImg}}" mode="aspectFill"></image>
+        <text class="desc" style="width: {{item.liveStatus == 102 ? 325 : 200}}rpx;">{{item.liveStatus == 102 ? dateUtil.dateFormat(item.startTime, 'MM月dd日hh:mm') + '开播' : liveStatus[item.liveStatus]}}</text>
+        <view class="label" style="background-color: #{{item.liveStatus == 102 ? '669933' : '333333'}};">
+          <van-icon name="live" size="30rpx" color="#fff"/>
+        </view>
+        <text wx:if="{{item.sortOrder > 0}}" class="top">置顶</text>
+      </navigator>
+      <view class="bottom">
+        <navigator url="plugin-private://wx2b03c6e691cd7370/pages/live-player-plugin?room_id={{item.roomid}}" class="text">
+          <text class="name">{{item.name}}</text>
+          <text wx:if="{{item.anchorName != ''}}" class="desc">主播：{{item.anchorName}}</text>
+        </navigator>
+        <view wx:if="{{item.goodsList.length > 0 && item.liveStatus != 103}}" class="product-list">
+          <navigator url="/{{item.goodsList[0].url}}" class="product" >
+            <image class="img" src="{{item.goodsList[0].coverImg}}" mode="aspectFill"/>
+            <view class="label">¥{{item.goodsList[0].price}}</view>
+          </navigator>
+          <navigator url="/{{item.goodsList[1].url}}" class="product" wx:if="{{item.goodsList.length > 1}}">
+            <image class="img" src="{{item.goodsList[1].coverImg}}" mode="aspectFill"/>
+            <view wx:if="{{item.goodsList.length == 2}}" class="label">¥{{item.goodsList[0].price}}</view>
+            <view wx:if="{{item.goodsList.length > 2}}" class="label"><text >2</text>商品</view>
+          </navigator>
+        </view>
+        <view class="opration" wx:elif="{{item.liveRoomReplyList.length > 0}}">
+          <van-button type="info" size="small" data-room="{{item}}" bind:click="showHistoryPopup">观看回放</van-button>
+        </view>
+      </view>
+    </view>
+  </view>
+  <van-popup show="{{ historyShow }}" bind:close="onClose">
+    <video src="{{liveHistoryRoom.mediaUrl}}"></video>
+  </van-popup>
+
+  <!-- 联系客服 -->
+  <view class="contact">
+    <contact-button style="opacity:0;position:absolute;" type="default-dark" session-from="weapp" size="27">
+    </contact-button>
+  </view>
+</view>

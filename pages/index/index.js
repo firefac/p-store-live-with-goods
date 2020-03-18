@@ -45,7 +45,7 @@ Page({
   onShareAppMessage: function() {
     let that = this;
     return {
-      title: "费尔工坊拼团小程序",
+      title: "费尔工坊社交电商小程序",
       path: '/pages/index/index'
     }
   },
@@ -277,16 +277,5 @@ Page({
         }
       })
     }
-  },
-  jumpToMp: function(e){
-    if (e.currentTarget.dataset.link != '') {
-      wx.navigateToMiniProgram({
-        appId: "wx283419ee2df7ee01",
-        path: e.currentTarget.dataset.link,
-        success(res) {
-          // 打开成功
-        }
-      })
-    }
-  },
+  }
 })
