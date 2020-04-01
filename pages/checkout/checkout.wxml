@@ -92,6 +92,6 @@
 
   <view class="order-total">
     <view class="l">实付：￥{{actualPrice}}</view>
-    <view class="r" bindtap="submitOrder">去付款</view>
+    <view class="r" bindtap="submitOrderWithSubscribe">去付款</view>
   </view>
 </view>

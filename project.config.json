@@ -9,7 +9,7 @@
 		"uglifyFileName": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.4.0",
+	"libVersion": "2.10.3",
 	"appid": "wxc8d675b0d496a013",
 	"projectname": "live-with-goods",
 	"simulatorType": "wechat",

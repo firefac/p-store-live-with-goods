@@ -1,6 +1,8 @@
 // 以下是业务服务器API地址
+// 开发环境
+// var WxApiRoot = 'http://test-api.firefac.cn/openapi/';
 // 测试环境
-var WxApiRoot = 'https://test-api.firefac.cn/openapi/';
+ var WxApiRoot = 'https://test-api.firefac.cn/openapi/';
 // 生产环境
 //var WxApiRoot = 'https://e-commerce.firefac.cn/openapi/';
 
@@ -98,4 +100,7 @@ module.exports = {
 
   LiveRoomList: WxApiRoot + 'live/list', //直播房间列表
   LiveRoomStatusUpdate: WxApiRoot + 'live/status/update', //直播房间列表
+
+  MessageTemplateList: WxApiRoot + 'message/template/list', //订阅模版消息
+
 };

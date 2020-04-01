@@ -22,10 +22,30 @@ Page({
     grouponRulesId: 0, //团购规则ID
     patchGrouponId: 0,
     patchGrouponInstId: 0,
-    needRefresh: true
+    needRefresh: true,
+    tmplIds: []
   },
   onLoad: function(options) {
+    let that = this
     // 页面初始化 options为页面跳转所带来的参数
+    util.request(api.MessageTemplateList, {
+      code: 'order'
+    }).then(function(res) {
+      if (res.errcode === '0') {
+        var templateList = res.data.list
+        if(templateList.length == 0){
+          return
+        }
+        var tmplIds = [];
+        for (let i = 0; i < templateList.length; i++) {
+          tmplIds.push(templateList[i].templateId)
+        }
+
+        that.setData({
+          tmplIds: tmplIds
+        })
+      }
+    });
   },
 
   //获取checkou信息
@@ -153,6 +173,28 @@ Page({
   onUnload: function() {
     // 页面关闭
 
+  },
+  submitOrderWithSubscribe: function() {
+    let that = this
+
+    if(this.data.tmplIds.length == 0){
+      that.submitOrder();
+      return
+    }
+
+    wx.requestSubscribeMessage({
+      tmplIds: this.data.tmplIds,
+      success (res) {
+        console.log('success' + res.errMsg);
+        console.log('success' + res.TEMPLATE_ID);
+        that.submitOrder();
+      },
+      fail (res) { 
+        console.log('fail' + res.errMsg);
+        console.log('success' + res.errCode);
+        that.submitOrder();
+      }
+    })
   },
   submitOrder: function() {
     let that = this
