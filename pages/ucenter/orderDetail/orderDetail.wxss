@@ -144,7 +144,7 @@ view, text {
 
 .order-goods .item .t {
   margin-top: 8rpx;
-  height: 33rpx;
+  height: 70rpx;
   line-height: 33rpx;
   margin-bottom: 10.5rpx;
 }
@@ -152,7 +152,9 @@ view, text {
 .order-goods .item .t .name {
   display: block;
   float: left;
-  height: auto;
+  width: 80%;
+  height: 70rpx;
+  overflow: hidden;
   line-height: 33rpx;
   color: #333;
   font-size: 30rpx;

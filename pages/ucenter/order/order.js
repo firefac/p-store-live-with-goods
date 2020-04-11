@@ -61,8 +61,7 @@ Page({
       orderList: [],
       showType: showType,
       pageNum: 1,
-      pageSize: 10,
-      totalPages: 1
+      pageSize: 10
     });
     this.getOrderList();
   },
@@ -71,6 +70,9 @@ Page({
   },
   onShow: function() {
     // 页面显示
+    this.setData({
+      orderList: []
+    });
     this.getOrderList();
   },
   onHide: function() {
