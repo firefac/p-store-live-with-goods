@@ -34,8 +34,10 @@
     "pages/goods/goods",
     "pages/about/about",
     "pages/coupon/coupon",
-    "pages/livePlayer/livePlayer",
-    "pages/livePlayer2/livePlayer",
+    "pages/live/livePlayer/livePlayer",
+    "pages/live/livePlayer2/livePlayer",
+    "pages/live/livePlayer3/livePlayer",
+    "pages/live/livePlayerDetail/livePlayerDetail",
     "pages/works/works",
     "pages/worksList/worksList",
     "pages/worksList-tag/worksList",
@@ -62,7 +64,7 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/livePlayer2/livePlayer",
+        "pagePath": "pages/live/livePlayer3/livePlayer",
         "iconPath": "static/images/live.png",
         "selectedIconPath": "static/images/live@selected.png",
         "text": "直播"
@@ -94,7 +96,7 @@
   ],
   "plugins": {
     "live-player-plugin": {
-      "version": "1.0.0",
+      "version": "1.0.6",
       "provider": "wx2b03c6e691cd7370"
     }
   }

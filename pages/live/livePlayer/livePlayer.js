@@ -1,5 +1,5 @@
-var util = require('../../utils/util.js');
-var api = require('../../config/api.js');
+var util = require('../../../utils/util.js');
+var api = require('../../../config/api.js');
 
 Page({
   data: {
@@ -9,6 +9,11 @@ Page({
     pageNum: 1,
     pageSize: 5,
     lastPage: false,
+    finishedRooms:[],
+    finishedPageNum: 1,
+    finishedPageSize: 5,
+    finishedLastPage: false,
+    liveHistoryRoom: {},
     liveStatus: {
       101: "直播中",
       102: "未开始",
@@ -21,11 +26,21 @@ Page({
   },
   onLoad: function () {    
     this.getRoomsList();    
+    this.getFinishedRoomsList();    
+  },
+  // 页面分享
+  onShareAppMessage: function() {
+    let that = this;
+    return {
+      title: "快来费尔工坊一起玩直播吧",
+      path: 'pages/live/livePlayer/livePlayer'
+    }
   },
   onPullDownRefresh() {
     wx.showNavigationBarLoading() //在标题栏中显示加载
     this.resetData();
     this.getRoomsList();
+    this.getFinishedRoomsList();    
     wx.hideNavigationBarLoading() //完成停止加载
     wx.stopPullDownRefresh() //停止下拉刷新
   },
@@ -33,13 +48,17 @@ Page({
     this.setData({
       rooms:[],
       pageNum: 1,
-      lastPage: false
+      lastPage: false,
+      finishedRooms:[],
+      finishedPageNum: 1,
+      finishedLastPage: false
     })
   },
   getRoomsList: function() {
     let that = this;
     util.request(api.LiveRoomList, {
-        sort: "desc",
+        statusList: [101, 102, 105, 106],
+        sort: "asc",
         pageNum: this.data.pageNum,
         pageSize: this.data.pageSize
       }, "POST")
@@ -93,6 +112,26 @@ Page({
       console.log(err)
     })
   },
+  getFinishedRoomsList: function() {
+    let that = this;
+    util.request(api.LiveRoomList, {
+        statusList: [103, 104, 107],
+        pageNum: this.data.finishedPageNum,
+        pageSize: this.data.finishedPageSize
+      }, "POST")
+      .then(function(res) {
+        if (res.errcode === '0') {
+
+          that.setData({
+            finishedRooms: that.data.finishedRooms.concat(res.data.list)
+          })
+
+          if(res.data.list.length < that.data.finishedPageSize){
+            that.data.finishedLastPage = true
+          }
+        }
+      });
+  },
   showHistoryPopup: function(e){
     var room = e.currentTarget.dataset.room
 
@@ -108,19 +147,36 @@ Page({
     });
   },
   onReachBottom() {
-    if(this.data.lastPage){
-      wx.showToast({
-        title: '没有更多直播了',
-        icon: 'none',
-        duration: 2000
-      });
-      return false;
-    }else{
-      this.setData({
-        pageNum: this.data.pageNum + 1
-      })
-      this.getRoomsList();
+    if(this.data.tabIndex == 0){
+      if(this.data.lastPage){
+        wx.showToast({
+          title: '没有更多直播了',
+          icon: 'none',
+          duration: 2000
+        });
+        return false;
+      }else{
+        this.data.pageNum = this.data.pageNum + 1
+        this.getRoomsList();
+      }
+    }else if(this.data.tabIndex == 1){
+      if(this.data.finishedLastPage){
+        wx.showToast({
+          title: '没有更多内容了',
+          icon: 'none',
+          duration: 2000
+        });
+        return false;
+      }else{
+        this.data.finishedPageNum = this.data.finishedageNum + 1
+        this.getFinishedRoomsList();
+      }
     }
+  },
+  switchCate: function(event) {
+    this.setData({
+      tabIndex: event.detail.name
+    })
   },
   onReady: function() {
     // 页面渲染完成

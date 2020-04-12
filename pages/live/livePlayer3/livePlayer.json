@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "直播",
+  "navigationBarTitleText": "直播演示3",
   "usingComponents": {
     "van-tab": "../../lib/tab/index",
     "van-tabs": "../../lib/tabs/index",

@@ -1,0 +1,280 @@
+.container {
+  box-sizing: border-box;
+  background-color: #ffffff;
+  font-family: PingFangSC-Light, helvetica, 'Heiti SC';
+}
+
+view, text {
+  font-family: PingFangSC-Light, helvetica, 'Heiti SC';
+  font-size: 29rpx;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.live-container{
+  width: 750rpx;
+  height: 100%;
+  overflow: hidden;
+  padding: 20rpx;
+}
+
+.live-container .history {
+  width: 100%;
+  background: #fff;
+  margin-bottom: 25rpx;
+  display: flex;
+}
+
+.live-container .history .img-container{
+  width: 400rpx;
+  height: 400rpx;
+  position: relative;
+  border-radius: 20rpx 0rpx 0rpx 20rpx;
+  box-shadow: 0px 2px  4px 1px #DDD;
+}
+
+.live-container .history .img-container .img {
+  width: 100%;
+  height: 400rpx;
+  background: #fff;
+  border-radius: 20rpx 0rpx 0rpx 20rpx;
+  position: absolute;
+}
+
+.live-container .history .img-container .label {
+  height: 50rpx;
+  width: 50rpx;
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  top: 15rpx;
+  left: 15rpx;
+  font-size: 28rpx;
+  background-size: 55rpx auto;
+  padding: 10rpx;
+}
+
+.live-container .history .img-container .top {
+  height: 35rpx;
+  width: 80rpx;
+  border-radius: 25rpx;
+  background-color: #FF6600;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  bottom: 15rpx;
+  left: 15rpx;
+  font-size: 24rpx;
+  background-size: 55rpx auto;
+}
+
+.live-container .history .img-container .desc {
+  height: 50rpx;
+  max-width: 400rpx;
+  border-radius: 25rpx;
+  background-color: rgba(0,0,0,0.3);
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  top: 15rpx;
+  left: 15rpx;
+  font-size: 28rpx;
+  background-size: 55rpx auto;
+  padding-left: 50rpx;
+}
+
+.live-container .history .bottom {
+  width: 310rpx;
+  height: 400rpx;
+  flex-flow: row nowrap;
+  box-shadow: 0px 2px  4px 1px #DDD;
+  border-radius: 0rpx 20rpx 20rpx 0rpx;
+}
+
+.live-container .history .text {
+  padding: 20rpx;
+  width: 100%;
+  height: 200rpx;
+}
+
+.live-container .history .text .name {
+  width: 100%;
+  height: 110rpx;
+  display: block;
+  color: #333;
+  line-height: 40rpx;
+  font-size: 35rpx;
+  font-weight: bold;
+  padding: 30rpx 0 20rpx 0;
+  overflow: hidden;
+}
+
+.live-container .history .bottom .opration{
+  padding-top: 50rpx;
+  text-align: center;
+}
+
+.live-container .history .bottom .product-list{
+  width: 300rpx;
+  height: 200rpx;
+  display: flex;
+  padding: 20rpx 10rpx;
+}
+
+.live-container .history .bottom .product{
+  width: 120rpx;
+  height: 120rpx;
+  margin: 0rpx 10rpx 0rpx 10rpx;
+  position: relative;
+}
+.live-container .history .bottom .product .img{
+  width: 120rpx;
+  height: 120rpx;
+  position: absolute;
+}
+.live-container .history .bottom .product .label {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.3);
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  font-size: 28rpx;
+  font-weight: bold;
+  background-size: 55rpx auto;
+  padding: 40rpx 0rpx;
+}
+
+.live-container .history .capsule-tag {
+  float: right;
+  padding-right: 0rpx;
+  padding-top: 8rpx;
+}
+
+.live-container .history .zan-capsule + .zan-capsule {
+  margin-left: 10px;
+}
+
+.live-container .history .desc {
+  width: 100%;
+  height: 50rpx;
+  display: block;
+  color: #666;
+  line-height: 50rpx;
+  font-size: 29rpx;
+  overflow: hidden;
+}
+
+.live-container .history .subscribe {
+  padding-top: 30rpx;
+}
+
+.noContent{
+  display: block;
+  line-height: 80rpx;
+  text-align: center;
+  margin-top: 100rpx;
+  font-size: 30rpx;
+  color: #666666;
+}
+
+.contact {
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 100%;
+  position: fixed;
+  bottom: 96rpx;
+  right: 20rpx;
+  font-size: 20rpx;
+  box-sizing: border-box;
+  background: url("https://firefac-1259431066.picsh.myqcloud.com/5ufjlp0rw68jen3pctjha6kk6jl6v4x9.png") no-repeat center 21rpx;
+  background-size: 55rpx auto;
+}
+
+.video {
+  width: 600rpx;
+  height: 450rpx;
+}
+
+.live-container .living {
+  width: 100%;
+  background: #fff;
+  margin-bottom: 25rpx;
+}
+
+.live-container .living .img-container{
+  height: 420rpx;
+  position: relative;
+}
+
+.live-container .living .img {
+  width: 100%;
+  height: 420rpx;
+  background: #fff;
+  border-radius: 20rpx 20rpx 0rpx 0rpx;
+  position: absolute;
+}
+
+.live-container .living .label {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.3);
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  font-size: 40px;
+  background-size: 55rpx auto;
+  padding: 160rpx 0rpx;
+  border-radius: 20rpx 20rpx 0rpx 0rpx;
+}
+
+.live-container .living .bottom {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  box-shadow: 0px 2px  4px 1px #DDD;
+  border-radius: 0rpx 0rpx 20rpx 20rpx;
+}
+
+.live-container .living .bottom .link-button{
+  text-align: right;
+}
+
+.live-container .living .text {
+  padding: 20rpx;
+  width: 100%;
+}
+
+.live-container .living .name {
+  width: 100%;
+  display: block;
+  color: #333;
+  line-height: 50rpx;
+  font-size: 32rpx;
+  overflow: hidden;
+}
+
+.live-container .living .capsule-tag {
+  float: right;
+  padding-right: 0rpx;
+  padding-top: 8rpx;
+}
+
+.live-container .living .zan-capsule + .zan-capsule {
+  margin-left: 10px;
+}
+
+.live-container .living .desc {
+  width: 100%;
+  display: block;
+  color: #666;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  overflow: hidden;
+}
+
+.live-container .living .subscribe {
+  padding-top: 30rpx;
+}

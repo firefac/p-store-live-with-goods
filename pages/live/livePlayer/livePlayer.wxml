@@ -1,4 +1,4 @@
-<wxs module="dateUtil" src="../../utils/timeUtil.wxs"></wxs>
+<wxs module="dateUtil" src="../../../utils/timeUtil.wxs"></wxs>
 
 <view class="container">
   <van-tabs bind:change="switchCate" active="{{tabIndex}}" sticky="true" swipeable="true">

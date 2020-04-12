@@ -99,7 +99,9 @@ module.exports = {
   StorageGeneralGoodsPoster: WxApiRoot + 'storage/general/goods/poster', //生成海报,
 
   LiveRoomList: WxApiRoot + 'live/list', //直播房间列表
+  LiveRoomDetail: WxApiRoot + 'live/detail', //直播房间详情
   LiveRoomStatusUpdate: WxApiRoot + 'live/status/update', //直播房间列表
+  StorageGeneralLivePoster: WxApiRoot + 'storage/general/live/poster', //生成海报,
 
   MessageTemplateList: WxApiRoot + 'message/template/list', //订阅模版消息
 
