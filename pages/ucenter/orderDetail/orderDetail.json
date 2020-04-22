@@ -1,7 +1,7 @@
 {
   "navigationBarTitleText": "订单详情",
   "usingComponents": {
-    "van-icon": "../../lib/icon/index",
-    "van-steps": "../../lib/steps/index"
+    "van-icon": "../../../lib/icon/index",
+    "van-steps": "../../../lib/steps/index"
   }
 }

@@ -1,9 +1,9 @@
 {
   "navigationBarTitleText": "我的订单",
   "usingComponents": {
-    "van-tab": "../../lib/tab/index",
-    "van-tabs": "../../lib/tabs/index",
-    "van-button": "../../lib/button/index",
-    "van-count-down": "../../lib/count-down/index"
+    "van-tab": "../../../lib/tab/index",
+    "van-tabs": "../../../lib/tabs/index",
+    "van-button": "../../../lib/button/index",
+    "van-count-down": "../../../lib/count-down/index"
   }
 }

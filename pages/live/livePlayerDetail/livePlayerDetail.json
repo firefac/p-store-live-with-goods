@@ -1,10 +1,10 @@
 {
   "navigationBarTitleText": "直播详情",
   "usingComponents": {
-    "van-popup": "../../lib/popup/index",
-    "van-button": "../../lib/button/index",
-    "van-icon": "../../lib/icon/index",
-    "van-tag": "../../lib/tag/index",
-    "van-panel": "../../lib/panel/index"
+    "van-popup": "../../../lib/popup/index",
+    "van-button": "../../../lib/button/index",
+    "van-icon": "../../../lib/icon/index",
+    "van-tag": "../../../lib/tag/index",
+    "van-panel": "../../../lib/panel/index"
   }
 }
