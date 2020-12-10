@@ -4,7 +4,7 @@
 // 测试环境
  var WxApiRoot = 'https://test-api.firefac.cn/openapi/';
 // 生产环境
-//var WxApiRoot = 'https://e-commerce.firefac.cn/openapi/';
+// var WxApiRoot = 'https://e-commerce.firefac.cn/openapi/';
 
 module.exports = {
   IndexUrl: WxApiRoot + 'home/index', //首页数据接口

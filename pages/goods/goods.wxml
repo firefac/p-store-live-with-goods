@@ -2,6 +2,9 @@
 
 <view class="container">
   <swiper class="goodsimgs" indicator-dots="true" autoplay="true" interval="8000" duration="1000">
+    <swiper-item wx:if="{{goods.videoVO != null && goods.videoVO.url != null}}">
+      <video style="width: 100%;height: 100%;" poster="{{agoods.videoVO.coverUrl}}" src="{{goods.videoVO.url}}"></video>
+    </swiper-item>
     <swiper-item wx:for="{{goods.galleryList}}" wx:key="*this">
       <image src="{{item}}" background-size="cover" mode="aspectFill"></image>
     </swiper-item>
